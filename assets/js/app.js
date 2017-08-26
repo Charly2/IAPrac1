@@ -52,12 +52,20 @@ function App() {
             swal("Ubica los Obstaculos", "Selecciona la posicion de los "+mineralesNum.value +" obstaculos");
         }
         if (nivelCarga==4){
-            swal("Iniciemos", "Comienza el juego");
-            Concurrent.Thread.create(moverActivo, 1,1)
-            Concurrent.Thread.create(moverActivo, 3,1)
-            Concurrent.Thread.create(moverActivo, 5,1)
-            Concurrent.Thread.create(moverNave, 7,1)
-            Concurrent.Thread.create(moverNave, 9,1)
+            swal({
+                title: "Todo Listo, Comenzamos",
+                text: "Espera el resultado optimo.",
+                imageUrl: "assets/img/thumbs-up.jpg",
+                },
+                function(){
+                    Concurrent.Thread.create(moverActivo, 1,1)
+                    Concurrent.Thread.create(moverActivo, 3,1)
+                    Concurrent.Thread.create(moverActivo, 5,1)
+                    Concurrent.Thread.create(moverNave, 7,1)
+                    Concurrent.Thread.create(moverNave, 9,1)
+                }
+            );
+
 
         }
     });
