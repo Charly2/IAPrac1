@@ -24,7 +24,7 @@ function init(numf,numi) {
                 this.activo
                 if (this.activo){
                     console.log("desactivo");
-                    quitar(this)
+                    //quitar(this)
                 }
                 else {
                     console.log("activo")
@@ -56,6 +56,7 @@ function agregar(e){
         e.style.background= "url(assets/img/nave.png)";
         e.style.backgroundSize ="100% 100%";
         nivelCarga=2;
+        e.activo=true;
         $( "#evento").trigger( "custom", [ "Custom", "Event" ] );
     }
     else if (nivelCarga==2){
